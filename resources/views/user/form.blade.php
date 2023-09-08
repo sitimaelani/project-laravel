@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>SITI MAELANI SA ADAH</title>
   </head>
@@ -8,13 +8,13 @@
     <h3>Sign Up Form</h3>
     <form action="/welcome">
       <label for="fn">First name :</label>
-      <br /><br />
+      <br/><br/>
       <input type="text" name="" id="fn" />
-      <br /><br />
+      <br/><br/>
       <label for="ln">Last name :</label>
-      <br /><br />
+      <br/><br/>
       <input type="text" name="" id="ln" />
-      <br />
+      <br/>
       <p>Gender :</p>
       <input type="radio" id="Male" name="fav_language" value="Male" />
       <label for="Male">Male</label><br />
