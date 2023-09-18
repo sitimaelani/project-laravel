@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    CastController,
+    GenreController,
+};
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +32,12 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/welcome', function () {
 //     return view('user.welcome');
 // });
+// Route::get('/', function () {
+//         return view('cast.create');
+//     });
 Route::get('/', function () {
-        return view('layout.master');
-    });
+    return view('dashboard');
+})->name('dashboard');
 
+Route::resource('/cast', CastController::class);
+Route::resource('/genre', GenreController::class);
