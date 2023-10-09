@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Cast')
+@section('title', 'Genre')
     @section('content')
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -12,7 +12,7 @@
                   <div class="col-sm-6">
                       <ol class="breadcrumb float-sm-right">
                           <li class="breadcrumb-item"><a href="#">Home</a></li>
-                          <li class="breadcrumb-item active">Cast</li>
+                          <li class="breadcrumb-item active">Genre</li>
                       </ol>
                   </div><!-- /.col -->
               </div><!-- /.row -->
@@ -36,16 +36,8 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama</label>
-                  <input type="text" class="form-control" name="nama" id="exampleInputPassword1" placeholder="Masukan Nama" value="{{ $casts[0]->nama}}" disabled>
+                  <input type="text" class="form-control" name="nama" id="exampleInputPassword1" placeholder="Masukan Nama" value="{{ $genre[0]->nama}}" disabled>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Umur</label>
-                    <input type="number" class="form-control" name="umur" id="exampleInputPassword1" placeholder="Masukan umur"  value="{{ $casts[0]->umur}}" disabled>
-                  </div>
-                <!-- textarea -->
-                <div class="form-group">
-                      <label>Biografi</label>
-                      <textarea class="form-control" name="bio" rows="3" placeholder="Masukan bio" disabled>{{ $casts[0]->bio}}</textarea>
                     </div>
                   </div>
               <!-- /.card-body -->
@@ -54,4 +46,8 @@
                 <button type="submit" class="btn btn-primary">Next</button>
               </div>
           </div>
+        </div>
+      </div>
+    </section>
+    </div>
     @endsection 

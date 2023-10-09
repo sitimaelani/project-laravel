@@ -51,7 +51,12 @@
               <!-- /.card-body -->
 
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Next</button>
+                <a class="btn btn-primary" href="{{route('cast.index')}}" role="button">back</a>
               </div>
           </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
     @endsection 

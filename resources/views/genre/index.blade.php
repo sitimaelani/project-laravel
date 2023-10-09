@@ -47,16 +47,16 @@
                     </thead>
                     <tbody>
                     </tbody>
-                    @forelse ($genres as $key => $value)
-                    <form action="{{route ('genre.destroy', $value->id)}}" method="POST">
-                      @csrf
-                      @method('DELETE')
+                    @forelse ($genre as $key => $value)
                     <tr>
+                      <form action="{{route ('genre.destroy', $value->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
                         <td>{{ $key + 1}}</td>
                         <td>{{ $value->nama}}</td>
                         <td>
-                            <a href="{{route('genre.edit', $value->id)}}" class="btn-sm btn-warning">
-                              <i class="fas fa-edit"></i>edit</a>
+                          <a href="{{route('genre.edit', $value->id)}}" class="btn-sm btn-warning">
+                            <i class="fas fa-edit"></i>edit</a>
                             
                               <button type="submit" class="btn-sm btn-danger"><i class="fas fa-trash-alt"></i>hapus</button>
                             </form>
@@ -70,12 +70,13 @@
                     <tfoot>
                     </tfoot>
                     </table>
-                  </div>
-                  <!-- /.card-body -->
                 </div>
-                <!-- /.card -->
-                
-
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>
 @endsection
 
 @push('script')
@@ -92,4 +93,3 @@
 <script src="{{asset ('Template/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset ('Template/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 @endpush
-

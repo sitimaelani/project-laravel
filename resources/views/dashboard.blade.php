@@ -28,7 +28,7 @@
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="m-0">Data </h5>
+                                    <h5 class="m-0">Data Cast</h5>
                                 </div>
                                 <div class="card-body">
                                     <h6 class="card-title">Lorem ipsum dolor sit amet.</h6>

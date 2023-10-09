@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    UserController,
     CastController,
     GenreController,
+    AuthController
 };
 
 
@@ -35,6 +37,16 @@ use App\Http\Controllers\{
 // Route::get('/', function () {
 //         return view('cast.create');
 //     });
+Route::controller(AuthController::class)->group(function() {
+    Route::get('/register', 'register')->name('auth.register');
+    Route::post('/store', 'store')->name('auth.store');
+    Route::get('/login', 'login')->name('auth.login');
+    Route::post('/auth', 'authentication')->name('auth.authentication');
+    Route::get('/dashboard', 'dashboard')->name('auth.dashboard');
+    Route::post('/logout', 'logout')->name('auth.logout');
+});
+
+
 Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');

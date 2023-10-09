@@ -55,5 +55,10 @@
                 <button type="submit" class="btn btn-primary">Next</button>
               </div>
             </form>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+  </div>
     @endsection 

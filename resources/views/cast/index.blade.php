@@ -49,10 +49,10 @@
                     <tbody>
                     </tbody>
                         @forelse ($casts as $key => $value)
-                        <form action="{{route ('cast.destroy', $value->id)}}" method="POST">
-                          @csrf
-                          @method('DELETE')
                         <tr>
+                          <form action="{{route ('cast.destroy', $value->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
                             <td>{{ $key + 1}}</td>
                             <td>{{ $value->nama}}</td>
                             <td>{{ $value->umur}}</td>
@@ -73,8 +73,12 @@
                     </tfoot>
                     </table>
                   </div>
-                  <!-- /.card-body -->
-                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>
                 <!-- /.card -->
                 
 

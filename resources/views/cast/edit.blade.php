@@ -55,7 +55,7 @@
                       <label>Biografi</label>
                       <textarea class="form-control @error('bio') is-invalid @enderror" name="bio" rows="3" placeholder="Masukan bio">{{$casts[0]->bio}}</textarea>
                     </div>
-                @error('nama')
+                @error('bio')
                     <div class="alert alert-danger">{{$message}}</div> 
                 @enderror
                   </div>
@@ -65,5 +65,10 @@
                 <button type="submit" class="btn btn-warning">Update</button>
               </div>
             </form>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+    </div>
     @endsection 
