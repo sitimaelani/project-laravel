@@ -12,4 +12,9 @@ class Genre extends Model
     protected $table = 'genres';
     protected $fillable = ['nama'];
 
+    public function film()
+    {
+        return $this->belongsTo('App\Models\Film');
+    }
+
 }

@@ -6,6 +6,17 @@
       <span class="brand-text font-weight-light">Projek Sekolah</span>
   </a>
 
+  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="image">
+        <img src="{{ asset('template/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+            alt="User Image">
+    </div>
+    <div class="info">
+        <a href="{{ route('cast.edit', Auth::user()->id) }}" class="d-block text-white">{{ Auth::user()->name }}</a>
+        {{-- href="{{ route('user.edit', Auth::user()->id) }}" --}}
+    </div>
+</div>
+
   <!-- Sidebar -->
   <div class="sidebar mt-2">
       <!-- SidebarSearch Form -->
@@ -36,7 +47,7 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="{{ route('cast.create') }}" class="nav-link">
+                  <a href="{{ route('cast.create') }}" class="nav-link @if (Request::segment(1) == 'cast') active @endif">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
                           Form Cast
@@ -44,7 +55,7 @@
                   </a>
               </li>
               <li class="nav-item">
-                  <a href="{{route('genre.create')}}" class="nav-link">
+                  <a href="{{route('genre.create')}}" class="nav-link @if (Request::segment(1) == 'genre') active @endif">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
                           Form Genre

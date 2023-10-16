@@ -181,8 +181,10 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
+    'aliases' => 
+    Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
     ])->toArray(),
 
 ];

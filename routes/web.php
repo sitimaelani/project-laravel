@@ -5,7 +5,8 @@ use App\Http\Controllers\{
     UserController,
     CastController,
     GenreController,
-    AuthController
+    AuthController,
+    FilmController
 };
 
 
@@ -38,7 +39,7 @@ use App\Http\Controllers\{
 //         return view('cast.create');
 //     });
 Route::controller(AuthController::class)->group(function() {
-    Route::get('/register', 'register')->name('auth.register');
+    Route::get('/', 'register')->name('auth.register');
     Route::post('/store', 'store')->name('auth.store');
     Route::get('/login', 'login')->name('auth.login');
     Route::post('/auth', 'authentication')->name('auth.authentication');
@@ -47,9 +48,12 @@ Route::controller(AuthController::class)->group(function() {
 });
 
 
-Route::get('/', function () {
+Route::get('/dash', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('/cast', CastController::class);
-Route::resource('/genre', GenreController::class);
+Route::resource('/cast', CastController::class)->middleware('auth');
+Route::resource('/genre', GenreController::class)->middleware('auth');
+Route::resource('/film', FilmController::class)->middleware('auth');
+
+
