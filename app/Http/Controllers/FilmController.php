@@ -51,7 +51,7 @@ class FilmController extends Controller
 
         $film::create([
             'judul' => $request['judul'],
-            'genre_id' => $request['genre'],
+            'genre' => $request['genre'],
             'tahun' => $request['tahun'],
             'ringkasan' => $request['ringkasan'],
             'poster' => $result,
@@ -65,7 +65,7 @@ class FilmController extends Controller
      */
     public function show(Film $film)
     {
-        //
+        return view ('film.show',compact('film')) ;
     }
 
     /**

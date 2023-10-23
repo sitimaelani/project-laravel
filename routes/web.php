@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     CastController,
     GenreController,
     AuthController,
-    FilmController
+    FilmController,
+    PeranController,
 };
 
 
@@ -39,9 +40,9 @@ use App\Http\Controllers\{
 //         return view('cast.create');
 //     });
 Route::controller(AuthController::class)->group(function() {
-    Route::get('/', 'register')->name('auth.register');
+    Route::get('/register', 'register')->name('auth.register');
     Route::post('/store', 'store')->name('auth.store');
-    Route::get('/login', 'login')->name('auth.login');
+    Route::get('/', 'login')->name('auth.login');
     Route::post('/auth', 'authentication')->name('auth.authentication');
     Route::get('/dashboard', 'dashboard')->name('auth.dashboard');
     Route::post('/logout', 'logout')->name('auth.logout');
@@ -56,4 +57,5 @@ Route::resource('/cast', CastController::class)->middleware('auth');
 Route::resource('/genre', GenreController::class)->middleware('auth');
 Route::resource('/film', FilmController::class)->middleware('auth');
 
-
+Route::get('/film/{film}/peran/create', [PeranController::class, 'create'])->name('peran.create')->middleware('auth');
+Route::post('/film/{film}/peran', [PeranController::class, 'store'])->name('peran.store')->middleware('auth');
