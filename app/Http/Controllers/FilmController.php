@@ -39,7 +39,7 @@ class FilmController extends Controller
         //
         $request->validate([
             'judul' => 'required',
-            'genre' => 'required',
+            'genre_id' => 'required',
             'tahun' => 'required',
             'ringkasan' => 'required',
             'poster' => 'required',
@@ -51,7 +51,7 @@ class FilmController extends Controller
 
         $film::create([
             'judul' => $request['judul'],
-            'genre' => $request['genre'],
+            'genre_id' => $request['genre_id'],
             'tahun' => $request['tahun'],
             'ringkasan' => $request['ringkasan'],
             'poster' => $result,
@@ -89,6 +89,7 @@ class FilmController extends Controller
      */
     public function destroy(Film $film)
     {
-        //
+        $film = Film::where('id', $film->id)->delete();
+        return redirect()->route('film.index');
     }
 }

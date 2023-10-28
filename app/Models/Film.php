@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Genre;
 use App\Models\Peran;
+use App\Models\Kritik;
+
 
 class Film extends Model
 {
@@ -29,4 +31,11 @@ class Film extends Model
         {
             return $this->hasMany(Peran::class);
         }
+    
+    public function kritik()
+        {
+            return $this->hasMany(Kritik::class);
+        }
+    
+
 }

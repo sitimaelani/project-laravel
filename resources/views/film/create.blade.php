@@ -61,7 +61,7 @@
                 </div>
                 <div class="form-group">
                   <label for="genre">Genre</label>
-                  <select name="genre" id="genre" class="form-control">
+                  <select name="genre_id" id="genre" class="form-control">
                     <option disabled selected>--Pilih Salah Satu--</option>
                       @forelse ($genres as $key => $value )
                         <option value="{{ $value->id }}">{{ $value->nama }}</option>

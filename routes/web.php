@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     AuthController,
     FilmController,
     PeranController,
+    KritikController
 };
 
 
@@ -59,3 +60,6 @@ Route::resource('/film', FilmController::class)->middleware('auth');
 
 Route::get('/film/{film}/peran/create', [PeranController::class, 'create'])->name('peran.create')->middleware('auth');
 Route::post('/film/{film}/peran', [PeranController::class, 'store'])->name('peran.store')->middleware('auth');
+
+Route::get('/film/{film}/kritik/create', [KritikController::class, 'create'])->name('kritik.create')->middleware('auth');
+Route::post('/film/{film}/kritik', [KritikController::class, 'store'])->name('kritik.store')->middleware('auth');
