@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
-            $table->integer('umur');
-            $table->text('bio');
-            $table->text('alamat');
-            $table->foreignId('user_id')->constrained();
-            $table->timestamps();
-        });
+            Schema::create('profiles', function (Blueprint $table) {
+                $table->id();
+                $table->integer('umur');
+                $table->text('bio');
+                $table->text('alamat');
+                $table->timestamps();
+            });
+        
     }
 
     /**

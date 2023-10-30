@@ -8,7 +8,8 @@ use App\Http\Controllers\{
     AuthController,
     FilmController,
     PeranController,
-    KritikController
+    KritikController,
+    ProfileController
 };
 
 
@@ -57,6 +58,8 @@ Route::get('/dash', function () {
 Route::resource('/cast', CastController::class)->middleware('auth');
 Route::resource('/genre', GenreController::class)->middleware('auth');
 Route::resource('/film', FilmController::class)->middleware('auth');
+
+Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('user.profile')->middleware('auth');
 
 Route::get('/film/{film}/peran/create', [PeranController::class, 'create'])->name('peran.create')->middleware('auth');
 Route::post('/film/{film}/peran', [PeranController::class, 'store'])->name('peran.store')->middleware('auth');

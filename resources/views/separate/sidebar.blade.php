@@ -12,7 +12,7 @@
             alt="User Image">
     </div>
     <div class="info">
-        <a href="{{ route('cast.edit', Auth::user()->id) }}" class="d-block text-white">{{ Auth::user()->name }}</a>
+        <a href="{{ route('user.profile', Auth::user()->id) }}" class="d-block text-white">{{ Auth::user()->name }}</a>
         {{-- href="{{ route('user.edit', Auth::user()->id) }}" --}}
     </div>
 </div>

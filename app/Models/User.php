@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_id'
     ];
 
     
@@ -48,5 +49,10 @@ class User extends Authenticatable
     public function kritik()
         {
             return $this->hasMany(Kritik::class);
+        }
+
+    public function profile()
+        {
+            return $this->hasOne(Profile::class, 'id', 'profile_id');
         }
 }

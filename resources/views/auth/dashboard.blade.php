@@ -28,7 +28,7 @@
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h1 class="card-title">Welcome bang</h1>
+                                    <h1 class="card-title">Welcome {{ Auth::user()->name }} cantikk</h1>
                                 </div>
                             </div>
                         </div>
