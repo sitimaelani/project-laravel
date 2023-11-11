@@ -12,7 +12,7 @@
             alt="User Image">
     </div>
     <div class="info">
-        <a href="{{ route('user.profile', Auth::user()->id) }}" class="d-block text-white">{{ Auth::user()->name }}</a>
+        <a href="{{ route('profile.show', Auth::user()->id) }}" class="d-block text-white">{{ Auth::user()->name }}</a>
         {{-- href="{{ route('user.edit', Auth::user()->id) }}" --}}
     </div>
 </div>
@@ -46,6 +46,7 @@
                       </p>
                   </a>
               </li>
+              @can('isAdmin')
               <li class="nav-item">
                   <a href="{{ route('cast.create') }}" class="nav-link @if (Request::segment(1) == 'cast') active @endif">
                       <i class="nav-icon fas fa-th"></i>
@@ -67,10 +68,11 @@
                   <a href="#" class="nav-link">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
-                          Create #
+                          Film
                       </p>
                   </a>
               </li>
+              @else
               <li class="nav-item">
                   <a href="#" class="nav-link">
                       <i class="nav-icon fas fa-th"></i>
@@ -87,6 +89,7 @@
                       </p>
                   </a>
               </li>
+              @endcan
               <li class="nav-item">
                 <form action="{{ route('auth.logout')}}" method="POST">
                 @csrf 

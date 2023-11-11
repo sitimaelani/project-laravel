@@ -60,7 +60,7 @@
         <span class="text-danger">{{$message}}</span>
         @enderror
         <div class="input-group mb-3">
-          <input type="number" class="form-control" placeholder="Age" name="umur">
+          <input type="number" class="form-control @error('umur') is-invalid @enderror" placeholder="Age" name="umur">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -71,7 +71,7 @@
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="input-group mb-3">
-          <textarea class="form-control" placeholder="Bio" name="bio"></textarea>
+          <textarea class="form-control @error('bio') is-invalid @enderror" placeholder="Bio" name="bio"></textarea>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -82,7 +82,7 @@
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="input-group mb-3">
-          <textarea class="form-control" placeholder="Alamat" name="alamat"></textarea>
+          <textarea class="form-control @error('alamat') is-invalid @enderror" placeholder="Alamat" name="alamat"></textarea>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -91,7 +91,7 @@
         </div>
         @error('alamat')
         <div class="alert alert-danger">{{ $message }}</div>
-      @enderror
+        @enderror
         <div class="row">
           <div class="col-8">
             

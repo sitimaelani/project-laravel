@@ -55,13 +55,13 @@ Route::get('/dash', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('/cast', CastController::class)->middleware('auth');
-Route::resource('/genre', GenreController::class)->middleware('auth');
+Route::resource('/cast', CastController::class)->middleware(['can:isAdmin', 'auth']);
+Route::resource('/genre', GenreController::class)->middleware(['can:isAdmin', 'auth']);
 Route::resource('/film', FilmController::class)->middleware('auth');
 
-Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('user.profile')->middleware('auth');
+Route::get('/profile/{user}/show', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
 
-Route::get('/film/{film}/peran/create', [PeranController::class, 'create'])->name('peran.create')->middleware('auth');
+Route::get('/film/{film}/peran/create', [PeranController::class, 'create'])->name('peran.create')->middleware(['can:isAdmin', 'auth']);
 Route::post('/film/{film}/peran', [PeranController::class, 'store'])->name('peran.store')->middleware('auth');
 
 Route::get('/film/{film}/kritik/create', [KritikController::class, 'create'])->name('kritik.create')->middleware('auth');

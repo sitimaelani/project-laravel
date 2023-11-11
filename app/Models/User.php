@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Kritik;
+use App\Models\Profile;
+use App\Models\Role;
+
 
 class User extends Authenticatable
 {
@@ -22,7 +25,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'profile_id'
+        'profile_id',
+        'role_id'
     ];
 
     
@@ -54,5 +58,10 @@ class User extends Authenticatable
     public function profile()
         {
             return $this->hasOne(Profile::class, 'id', 'profile_id');
+        }
+    
+    public function role()
+        {
+            return $this->hasOne(Profile::class, 'id', 'role_id');
         }
 }

@@ -38,11 +38,13 @@ class AuthController extends Controller
         $profile->umur      = $request->umur;
         $profile->save();
 
-        $user->profile_id   = $profile->id;
-        $user->name         = $request->name;
-        $user->email        = $request->email;
-        $user->password     = Hash::make($request->password);
-        $user->save();
+        $user::create([
+        'name'         => $request->name,
+        'email'        => $request->email,
+        'password'     => Hash::make($request->password),
+        'profile_id'   => $profile->id,
+        'role_id'      => 1,
+        ]);
 
         $credential = $request->only('email', 'password');
         $auth::attempt($credential);
